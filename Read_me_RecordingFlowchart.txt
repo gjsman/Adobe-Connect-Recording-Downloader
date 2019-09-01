@@ -48,13 +48,13 @@ At the top left is the latest time that the recorder server checked in. If there
 The second thing to look for is if there are any recordings highlighted yellow, as in the image below.
 
 Recordings with a yellow highlighted column like this are PROBLEMATIC. The recording server tried to download them, but something happened and the file was not saved. It is possible that the recording DID download correctly, but the program crashed before the database was updated or some other problem occurred. 
-To reset the recordings, click the “Reset problem recs” button. All the problematic recordings will  be put in the pending recordings list again, and the server will try to download them again. If it again fails, there may be a deeper problem with the program or the recording. The newest version of the recording server program will automatically reset problematic recordings after all the pending recordings have been downloaded.
+To reset the recordings, click the ï¿½Reset problem recsï¿½ button. All the problematic recordings will  be put in the pending recordings list again, and the server will try to download them again. If it again fails, there may be a deeper problem with the program or the recording. The newest version of the recording server program will automatically reset problematic recordings after all the pending recordings have been downloaded.
 4. To redo a bad recording download
-If a student or professor tells us that a download is defective, there are are two possibilities. The original recording may have a problem, in which case we can file a ticket with Adobe and they *might* be able to fix it. Or the downloaded copy we have may have a problem. Note that our recordings downloads only last about 4 ½ hours, so if the problem is that they stop there, that is deliberate, to prevent wasting processing time on empty recording hours. To reset a recording and have it do it over, simply delete it and then undelete it (see below). It will be added to the queue of pending recordings.
+If a student or professor tells us that a download is defective, there are are two possibilities. The original recording may have a problem, in which case we can file a ticket with Adobe and they *might* be able to fix it. Or the downloaded copy we have may have a problem. Note that our recordings downloads only last about 4 ï¿½ hours, so if the problem is that they stop there, that is deliberate, to prevent wasting processing time on empty recording hours. To reset a recording and have it do it over, simply delete it and then undelete it (see below). It will be added to the queue of pending recordings.
 
 5. To delete a recording
 
-click on the checkbox beside it, and then hit the “Submit deletions” button. The page will confirm your decision. You will not actually delete any files in Adobe Connect or on our recording server, but the database will ignore the recording from now on. It will not try to download it if it was pending. 
+click on the checkbox beside it, and then hit the ï¿½Submit deletionsï¿½ button. The page will confirm your decision. You will not actually delete any files in Adobe Connect or on our recording server, but the database will ignore the recording from now on. It will not try to download it if it was pending. 
 
 
 You may need to delete a recording if you get a report from a student or a professor that a downloaded recording is corrupt, but the recording hosted at Adobe is OK. Perhaps the sound or some feature was not working when the recording was downloaded. Simply delete the recording and UNDELETE it (see next page). Then the recording will be on the queue for downloading again. You might want to check the recordings made at the exact same time as the corrupt one (with the exact same downloaded time), to make sure that they are OK. Students might not report them until weeks later.
@@ -82,7 +82,7 @@ Our default mode, shown here, is three. That means that typically the server is 
 
 If the recording server program is not working, it probably just needs to be started again. Note that this does not mean turning the server off or taking it offline, but rather, connecting via RDP and running the program.
 
-Use the program Remote Desktop Connection. You will be connection to a virtual machine that is itself using RDP to connect to the server, so it is “watching” the Adobe Connect recordings 24/7
+Use the program Remote Desktop Connection. You will be connection to a virtual machine that is itself using RDP to connect to the server, so it is ï¿½watchingï¿½ the Adobe Connect recordings 24/7
 
 As a shortcut, you should save the info to a RDP file. Clicking on this file will automatically open Remote Desktop Connection with the login information to access the laptop. It will probably still ask for your password, since our network security prefs do not allow them to be stored.
 
@@ -108,7 +108,7 @@ As you can see from the icons on the bottom of the inside window, the recording 
 There are two different recording logs 
 1. C:\errors\log.log records any actions done by batch files
 2. C:\errors\SikuliErrors.log records any actions done by the Sikuli program
-If you want to check up on any problems, you should copy the files to your own computer and read them there instead of opening them in the recording server. Otherwise, you might inadvertently “lock” the files and prevent the recording program from adding more entries. 
+If you want to check up on any problems, you should copy the files to your own computer and read them there instead of opening them in the recording server. Otherwise, you might inadvertently ï¿½lockï¿½ the files and prevent the recording program from adding more entries. 
 Periodically I store the log files and start new blank ones.
 
 
@@ -121,22 +121,28 @@ Periodically I store the log files and start new blank ones.
 Adobe Cloud Servers
 Recordings stored in a collection of xml and flv files which are woven together into an interactive seamless experience. 
 Between eight and 30 hours of recordings are added each day.
- 
+
+ 
 Integration Server
 Authenticates Canvas users and points them to interactive recordings at Adobe and downloadable recordings 
 
 Downloads and stores Adobe Connect recordings as they are made
 2TB of storage and CPU running Windows Server 2012, MySql, and PHP 5.3, running a PHP program that determines if there are new recordings and puts them into a queue to be downloaded. Then a Sikuli program runs to automatically play the recordings on the server and store them 
-
+
+
 End user
 Can access interactive programs on Adobe cloud server or download the recordings from Integration Server through Canvas 
-
-
+
+
+
+
 Each class in Canvas has a page linking via BLTI authentication to the Integration Server which links to the correct Adobe Connect classroom and recordings
-
+
+
 Viewing VPS
 Connects to Integration Server with Remote Desktop Access, provides graphics and keyboard for the Sikuli program on the Integration Server.
-
+
+
 
 
 

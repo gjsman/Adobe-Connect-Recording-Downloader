@@ -11,11 +11,6 @@ include '../common/int_config.php';
 include '../common/adobe.php';
 include '../common/sess.php';
 
-if (!($_REQUEST['dist']==PHP_pass))
-	{
-	// If the password variable isn't there go to error message
-	header('Location: http://'.$_SERVER['HTTP_HOST'].'/connect/errors.php');
-	}
 $GLOBALS['qs'] = $_SERVER['QUERY_STRING'];
  
 if ($_REQUEST['debug']=='yes') $debug = true; 

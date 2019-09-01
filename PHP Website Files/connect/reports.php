@@ -322,13 +322,6 @@ if (isset($_POST['rec_serv']) && strlen($_POST['rec_serv'])>5)
 		}
 	}
 	
-if (!($_REQUEST['dist']==PHP_pass))
-	{
-	// If the password variable isn't there go to error message
-	header("Location: http://".$_SERVER['HTTP_HOST']."/connect/errors.php");
-	}
-
-	
 session_destroy();
 session_start();
 $_SESSION['standard']=0;
@@ -503,9 +496,9 @@ print '
 <div class="banner">
 <img id="bannerLogo" border="0" src="images/home.png" height="50" width="360">
 <div id="log" >
-<a href="index.php?dist='.PHP_pass.'" style="border-right: 1px solid;padding-right: 16px;">Configuration</a>
-<a href="service.php?dist='.PHP_pass.'" style="border-right: 1px solid;padding-right: 16px;">Repopulate</a>
-<a href="reports.php?dist='.PHP_pass.'">Reports</a>
+<a href="index.php" style="border-right: 1px solid;padding-right: 16px;">Configuration</a>
+<a href="service.php" style="border-right: 1px solid;padding-right: 16px;">Repopulate</a>
+<a href="reports.php">Reports</a>
 </div>
 </div>
 <div class="content">';
@@ -625,7 +618,7 @@ switch ($_SESSION['standard'])
 $data = mysql_query($query);
 
 
-print "<form method='post' action='delete.php?dist=".PHP_pass."' onsubmit='return submitValidate();' >\r\n";
+print "<form method='post' action='delete.php' onsubmit='return submitValidate();' >\r\n";
 print "<table align='center' cellpadding='0' cellspacing='0' border='0' class='display' id='example' style='font-size: 14px;margin-top: 1em;margin-bottom: 1em;' >\r\n"; 
 print "<thead>\r\n";
 print "<tr style='background-color:#8e0202 !important;color:#fff;'>\r\n";

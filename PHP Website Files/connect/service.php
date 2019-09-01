@@ -11,11 +11,7 @@ error_reporting(E_ALL);
 const debug =false;
 $debug = false;
 include '../common/int_config.php';
-if (!($_REQUEST['dist']==PHP_pass))
-	{
-	// If the password variable isn't there go to error message
-	header("Location: https://".$_SERVER['HTTP_HOST']."/connect/errors.php");
-	}
+
 if (isset($_REQUEST['debug']) && $_REQUEST['debug']=='yes')
 	$debug = true; 
 

@@ -21,7 +21,7 @@ const = {
 	'logfile':'C:\errors\SikuliErrors',
 		
 	#the API URL for your Adobe Connect instance
-	'BASE_URL': "https://capitol.adobeconnect.com/api/xml?action=",
+	'BASE_URL': "https://REPLACEME.adobeconnect.com/api/xml?action=",
 	
 	# Adobe account and login
 	'login' : "login&login=#REPLACE#&password=#REPLACE#",
@@ -56,15 +56,6 @@ const = {
 	
 	# service PHP URL
 	'PHP_URL' : "https://#REPLACE#/service.php?dist=#REPLACE#",
-	
-	# Canvas API page
-	'canvas' : "https://#REPLACE#.instructure.com/api/v1/accounts/",
-	
-	# Canvas account
-	'canvas_accnt' : '1',
-	
-	# Canvas token
-	'token' : '#REPLACE#',
 	
 	# Server for calls
 	'server' : "#REPLACE#"

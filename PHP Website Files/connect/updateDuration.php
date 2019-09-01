@@ -14,11 +14,6 @@ include '../common/int_config.php';
 include '../common/adobe.php';
 include '../common/sess.php';
 
-if (!isset($_REQUEST['dist']) || $_REQUEST['dist']!=PHP_pass )
-	{
-	// If the password variable isn't there go to error message
-	header("Location: http://".$_SERVER['HTTP_HOST']."/connect/errors.php");
-	}
 if (isset($_REQUEST['debug']) && $_REQUEST['debug']=='yes')
 	$debug = true; 
 

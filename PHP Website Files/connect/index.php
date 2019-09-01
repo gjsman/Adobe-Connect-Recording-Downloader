@@ -9,11 +9,6 @@
 
 include '../common/int_config.php';
 
-if (!($_REQUEST['dist']==PHP_pass))
-	{
-	// If the password variable isn't there go to error message
-	header("Location: http://".$_SERVER['HTTP_HOST']."/connect/errors.php");
-	}
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>

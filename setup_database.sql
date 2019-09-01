@@ -1,4 +1,5 @@
 -- PHP Version: 5.3.26
+-- NOT UPDATED YET! YOU MAY HAVE PROBLEMS!
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";

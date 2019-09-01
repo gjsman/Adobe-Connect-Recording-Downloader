@@ -6,9 +6,9 @@ for /f %%j in ("java.exe") do (
        set JAVA_HOME=%%~dp$PATH:j
         )
 @echo JAVA_HOME = %JAVA_HOME%
-set PATH=%PATH%;%ABS_PATH%Sikuli\libs;C:\Program Files (x86)\Java\jre6\bin
+set PATH=%PATH%;%ABS_PATH%Sikuli\libs;C:\Program Files\Amazon Corretto\jdk11\bin
 @echo PATH = %PATH%
-%ABS_PATH%"\Sikuli\Sikuli-IDE.bat" -r C:\HostingSpaces\Internal\capitolserver.net\wwwroot\sikuli\AdobeRec.skl
+%ABS_PATH%"\Sikuli\Sikuli-IDE.bat" -r C:\inetpub\wwwroot\sikuli\AdobeRec.skl
 
 PAUSE
 

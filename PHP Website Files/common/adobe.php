@@ -5,62 +5,8 @@
  distlearn@captechu.edu 
  ken.i.mayer@gmail.com
 
+ Addentum Copyright (C) 2019 Gabriel Sieben
 */
-
-class AdobeConnectUser {
-
-	private $user;
-	private $password;
-	private $curl;
-	public function __construct ($user,$password) {
-		$ch = curl_init();
-		$this->user = $user;
-		$this->pass = $password;
-		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-		curl_setopt($ch, CURLOPT_REFERER, ADOBE_API);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-		$this->curl = $ch;
-		$api_rqst = $this->makeRequest('common-info');
-		$_SESSION['sess'] = $api_rqst["common"]["cookie"];
-
-		}
-	/**
-	 * log in with student/prof username and password
-	  */
-	public function makeAuth() {		
-		return $this->makeRequest('login',
-			array(
-				'login'    => $this->user,
-				'password' => $this->pass
-			)
-		);
-	}
-
-
-	public function __destruct() {
-		@curl_close($this->curl);
-	}
-
-	public function makeRequest($action, array $params = array()) {
-		$url = ADOBE_API;
-		$url .= 'xml?action='.$action;
-		if ($action != "common-info")  $url .= '&session='.$_SESSION['sess'];
-		if (isset($params) && is_array($params) && count($params)>0 ) $url .='&'.http_build_query($params);
-		curl_setopt($this->curl, CURLOPT_URL, $url);
-		$result = curl_exec($this->curl);
-		$xml = simplexml_load_string($result);
-	 	
-		$json = json_encode($xml);
-		$data = json_decode($json, true);
-		if (!isset($data['status']['@attributes']['code']) || $data['status']['@attributes']['code'] !== 'ok') {
-			//throw new Exception('Coulnd\'t perform the action: '.$action);
-		}
-
-		return $data;
-	}
-}
-
 class AdobeConnectClient {
 	private $cookie;
 	private $curl;

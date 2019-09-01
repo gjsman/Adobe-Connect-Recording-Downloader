@@ -12,13 +12,19 @@ height: 55px;
 width: 90%;
 margin: auto;
 }
+.hidden {
+	display: none;
+}
 #log 
 {
 	float:right;
 	/*margin-top: -2.5em;*/
 	padding-top:2.5em;
 }
-
+.menulink {
+	border-right: 1px solid;
+	padding-right: 16px;
+}
 #log a
 {
 margin-right:15px;

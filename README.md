@@ -1,4 +1,18 @@
 # Adobe-Connect-Recording-Downloader
+GitHub user @AnnapolisKen wrote these scripts which can be set up to automatically download MP4 files of Adobe Connect recordings. Sadly, these scripts haven't been updated to work on modern platforms and use programming languages which are 6-7 years old. This is my attempt to modernize these scripts and bring them to life again.
+
+Target software (still in development):
+•	Windows Server 2016
+•	Amazon Corretto JRE 11
+•	Python 3.7
+•	HTML5
+•	SikuliX 1.1
+•	PHP 7.3 (and mysql -> mysqli extension migration)
+•	MariaDB
+
+Please give thanks to [Homeschool Connections](https://homeschoolconnectionsonline.com) for funding these improvements.
+
+# Old Readme
 A collection of scripts that can be set up to automatically download MP4 files of Adobe Connect recordings.
 
 This program finds new recordings in an Adobe Connect instance and automatically downloads the MP4 recordings. This program runs Adobe Connect and uses the Sikuli screenreader to interpret the recording and click buttons and enter info into input fields. Therefore it needs to be set up on a server with graphic user interface. I set it up on a Windows Server 2012 R2, with the following software
